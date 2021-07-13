@@ -1,12 +1,20 @@
-import React from 'react';
-import { View, Text}from 'react-native'
+import React, { useState} from 'react';
+import {
+    View,
+    Text,
+    Image
 
-export function SingIn(){
+} from 'react-native'
+import IllustrationImg from '../../assets/illustration.png';
+import { styles } from './style';
+
+export function SingIn() {
+    const [text, setText] = useState('Marcelo');
     return (
-        <View>
-            <Text>
-                SingIn Hello Word!
-            </Text>
+        <View style={styles.container}>
+
+            <Image source={IllustrationImg } />
+
         </View>
     )
 }
