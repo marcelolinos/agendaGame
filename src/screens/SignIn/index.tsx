@@ -15,6 +15,7 @@ export function SingIn() {
             <Image
                 source={IllustrationImg}
                 style={styles.image}
+                resizeMode="stretch"
             />
             <View style={styles.content}>
                 <Text style={ styles.title}>
