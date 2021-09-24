@@ -1,8 +1,32 @@
 import React from 'react';
-import { SingIn } from './src/screens/SignIn';
+import { StatusBar } from 'react-native';
+import { Inter_500Medium, Inter_400Regular } from '@expo-google-fonts/inter';
+import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
 
-export default function App(){
+import { Home } from './src/screens/Home';
+import { Background } from './src/components/Background';
+
+export default function App() {
+    const [fontLoaded]=useFonts({
+        Inter_400Regular,
+        Inter_500Medium,
+        Rajdhani_500Medium,
+        Rajdhani_700Bold
+    });
+    if (!fontLoaded) { // "!fontLoaded" utiliza o AppLoading, essa condição só inicializa se o "fontLoaded" carregar as fontes por completo.
+        return<AppLoading/>
+    }
     return (
-       <SingIn/>
+        <Background>
+            <StatusBar
+                barStyle="light-content"
+                backgroundColor="transparent"
+                translucent
+            />
+            <Home/>
+        </Background>
+        
     );
 }
