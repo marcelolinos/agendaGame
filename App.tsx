@@ -1,11 +1,12 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { Inter_500Medium, Inter_400Regular } from '@expo-google-fonts/inter';
+import {Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 
-import { Home } from './src/screens/Home';
+ 
+import { Routes } from './src/routes';
 import { Background } from './src/components/Background';
 
 export default function App() {
@@ -15,7 +16,8 @@ export default function App() {
         Rajdhani_500Medium,
         Rajdhani_700Bold
     });
-    if (!fontLoaded) { // "!fontLoaded" utiliza o AppLoading, essa condição só inicializa se o "fontLoaded" carregar as fontes por completo.
+    
+    if (!fontLoaded) { 
         return<AppLoading/>
     }
     return (
@@ -25,8 +27,7 @@ export default function App() {
                 backgroundColor="transparent"
                 translucent
             />
-            <Home/>
+            <Routes/>
         </Background>
-        
     );
 }

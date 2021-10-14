@@ -4,16 +4,22 @@ import {
     Text,
     Image
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { ButtonIcon } from '../../components/ButtonIcon';
 import IllustrationIgm from '../../assets/illustrationmk11.png';
 import { styles } from './styles';
 
+import { ButtonIcon } from '../../components/ButtonIcon';
+
 export function SingIn() {
+    const navigation = useNavigation();
+       
+function handleSignIn() {
+    navigation.navigate('Home')
+}
+
     return (
         <View style={styles.container}>
-            
-
             <Image
                 source={IllustrationIgm}
                 style={styles.image}
@@ -33,7 +39,7 @@ export function SingIn() {
                 </Text>
                 <ButtonIcon
                     title="Entrar com Discord"
-                    activeOpacity={0.7}
+                    onPress={handleSignIn}
                 />
             </View>
         </View>       
